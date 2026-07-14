@@ -1,0 +1,26 @@
+title:
+  en: HiP — Threat actor naming normalization
+  es: HiP — Normalización de nombres de actores de amenaza
+organization: COSEC, UC3M
+startDate: '2024'
+current: true
+featured: true
+summary:
+  en: >-
+    Research platform integrating vendor taxonomies and aliases to map
+    inconsistent threat-actor names and study CTI fragmentation.
+  es: >-
+    Plataforma de investigación que integra taxonomías y alias de proveedores
+    para mapear nombres inconsistentes de actores de amenaza y estudiar la
+    fragmentación CTI.
+role:
+  en: Co-designer and dataset/analysis lead.
+  es: Co-diseñador y responsable de datasets y análisis.
+tags:
+  - CTI
+  - threat intelligence
+  - attribution
+links:
+  code: https://github.com/0xjet/hip
+cover: /images/placeholders/project-hip.svg
+order: 2

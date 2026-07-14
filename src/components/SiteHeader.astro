@@ -1,0 +1,48 @@
+---
+import type { Locale } from '../i18n';
+import { localePath, t, ui } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+
+const navItems = [
+  { key: 'about', href: '/#about' },
+  { key: 'research', href: '/#research' },
+  { key: 'professional', href: '/#professional' },
+  { key: 'publications', href: '/publications' },
+  { key: 'projects', href: '/projects' },
+  { key: 'cv', href: '/cv' },
+  { key: 'contact', href: '/#contact' },
+] as const;
+---
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="brand" href={localePath('/', locale)}>Manuel Suárez Román</a>
+    <nav class="site-nav" aria-label={locale === 'es' ? 'Navegación principal' : 'Main navigation'}>
+      {
+        navItems.map((item) => (
+          <a
+            href={localePath(item.href, locale)}
+            aria-current={currentPath === localePath(item.href, locale) ? 'page' : undefined}
+          >
+            {t(ui.nav[item.key], locale)}
+          </a>
+        ))
+      }
+      <span class="lang-switch" aria-label={locale === 'es' ? 'Idioma' : 'Language'}>
+        <a href={localePath(currentPath, 'en')} aria-current={locale === 'en' ? 'true' : undefined}>
+          EN
+        </a>
+        <span aria-hidden="true">/</span>
+        <a href={localePath(currentPath, 'es')} aria-current={locale === 'es' ? 'true' : undefined}>
+          ES
+        </a>
+      </span>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,26 @@
+title:
+  en: Jornada CIU — Student conference platform
+  es: Jornada CIU — Plataforma de conferencias estudiantiles
+organization: Ciudad Universitaria, Madrid
+startDate: '2017'
+endDate: '2020'
+current: false
+featured: false
+summary:
+  en: >-
+    Annual short-talks conference for university students, including website,
+    communications, and speaker coordination.
+  es: >-
+    Conferencia anual de charlas breves para estudiantes universitarios, con web,
+    comunicación y coordinación de ponentes.
+role:
+  en: Founder, coordinator, and web developer.
+  es: Fundador, coordinador y desarrollador web.
+tags:
+  - events
+  - web development
+  - leadership
+links:
+  website: https://jornadaciu.org
+cover: /images/placeholders/project-jornada-ciu.svg
+order: 7

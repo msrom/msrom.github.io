@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n';
+import { localePath, t, ui } from '../i18n';
+import { publicationVenue } from '../lib/content';
+
+interface Props {
+  item: CollectionEntry<'publications'>;
+  locale: Locale;
+}
+
+const { item, locale } = Astro.props;
+const { data, id } = item;
+const cover = data.cover ?? '/images/placeholders/publication-generic.svg';
+---
+
+<article class="pub-item">
+  <a href={localePath(`/publications/${id}`, locale)} class="pub-item__media">
+    <img src={cover} alt="" loading="lazy" width="640" height="400" />
+  </a>
+  <h3>
+    <a href={localePath(`/publications/${id}`, locale)}>{data.title}</a>
+  </h3>
+  <p class="meta-row">{data.authors.join(', ')}</p>
+  <p class="meta-row">{publicationVenue(data.year, data.venue)}</p>
+  <p>{t(data.summary, locale)}</p>
+  {
+    data.links?.paper && (
+      <p class="link-row">
+        <a href={data.links.paper} rel="noopener noreferrer" target="_blank">
+          {t(ui.sections.viewPaper, locale)}
+        </a>
+        {
+          data.links.code && (
+            <a href={data.links.code} rel="noopener noreferrer" target="_blank">
+              {t(ui.sections.viewCode, locale)}
+            </a>
+          )
+        }
+      </p>
+    )
+  }
+</article>

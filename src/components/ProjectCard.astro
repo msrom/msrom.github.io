@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n';
+import { localePath, t, ui } from '../i18n';
+
+interface Props {
+  item: CollectionEntry<'projects'>;
+  locale: Locale;
+}
+
+const { item, locale } = Astro.props;
+const { data, id } = item;
+const cover = data.cover ?? '/images/placeholders/project-generic.svg';
+---
+
+<article class="work-item">
+  <a href={localePath(`/projects/${id}`, locale)} class="work-item__media">
+    <img src={cover} alt="" loading="lazy" width="640" height="400" />
+  </a>
+  <h3>
+    <a href={localePath(`/projects/${id}`, locale)}>{t(data.title, locale)}</a>
+  </h3>
+  <p class="meta-row">{data.organization}</p>
+  <p>{t(data.summary, locale)}</p>
+  <ul class="tag-list">
+    {data.tags.map((tag) => <li>{tag}</li>)}
+  </ul>
+  <p class="link-row">
+    <a href={localePath(`/projects/${id}`, locale)}>{t(ui.sections.viewProject, locale)}</a>
+  </p>
+</article>

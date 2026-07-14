@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { formatDateRange, localePath, t, ui } from '../../../i18n';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((item) => ({ params: { slug: item.id }, props: { item } }));
+}
+
+const locale = 'es';
+const { item } = Astro.props;
+const { data } = item;
+const cover = data.cover ?? '/images/placeholders/project-generic.svg';
+---
+
+<BaseLayout locale={locale} title={t(data.title, locale)} description={t(data.summary, locale)} currentPath={`/projects/${item.id}`}>
+  <article class="shell page-header">
+    <p class="section__label">{data.organization}</p>
+    <h1>{t(data.title, locale)}</h1>
+    <p class="meta-row">
+      {formatDateRange(data.startDate, data.endDate, data.current, locale)}
+    </p>
+    <figure class="work-item__media">
+      <img src={cover} alt="" width="640" height="400" />
+    </figure>
+  </article>
+  <div class="shell detail-grid">
+    <div>
+      <h2>Descripción</h2>
+      <p>{t(data.summary, locale)}</p>
+      <h2>{t(ui.sections.contribution, locale)}</h2>
+      <p>{t(data.role, locale)}</p>
+      <ul class="tag-list">
+        {data.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+    </div>
+    <aside class="detail-aside">
+      <h3>{t(ui.sections.links, locale)}</h3>
+      <div class="contact-panel__links">
+        {data.links?.website && <a href={data.links.website} rel="noopener noreferrer" target="_blank">Website</a>}
+        {data.links?.code && <a href={data.links.code} rel="noopener noreferrer" target="_blank">{t(ui.sections.viewCode, locale)}</a>}
+      </div>
+      <p class="link-row">
+        <a href={localePath('/projects', locale)}>{t(ui.sections.allProjects, locale)}</a>
+      </p>
+    </aside>
+  </div>
+</BaseLayout>

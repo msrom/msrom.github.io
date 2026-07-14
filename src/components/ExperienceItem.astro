@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n';
+import { formatDateRange, t } from '../i18n';
+
+interface Props {
+  item: CollectionEntry<'experience'>;
+  locale: Locale;
+}
+
+const { item, locale } = Astro.props;
+const { data } = item;
+---
+
+<article class="timeline-item">
+  <div class="timeline-item__head">
+    <div>
+      <h3>{t(data.title, locale)}</h3>
+      <p class="timeline-item__org">
+        {
+          data.organizationUrl ? (
+            <a href={data.organizationUrl} rel="noopener noreferrer" target="_blank">
+              {data.organization}
+            </a>
+          ) : (
+            data.organization
+          )
+        }
+      </p>
+    </div>
+    <p class="timeline-item__date">
+      {formatDateRange(data.startDate, data.endDate, data.current, locale)}
+    </p>
+  </div>
+  <ul class="bullet-list">
+    {data.highlights.map((highlight) => <li>{t(highlight, locale)}</li>)}
+  </ul>
+</article>

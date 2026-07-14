@@ -1,0 +1,28 @@
+title:
+  en: Cybersecurity Analyst & Data Scientist
+  es: Analista de ciberseguridad y científico de datos
+organization: CSIC — Instituto de Tecnologías Físicas y de la Información (ITEFI)
+organizationUrl: https://www.csic.es/
+location:
+  en: Madrid, Spain
+  es: Madrid, España
+startDate: '2022'
+endDate: '2024'
+current: false
+track: professional
+highlights:
+  - en: >-
+      GiCP: post-quantum cryptography in digital industry models; neural-network
+      HAR with AWS; secure digital-twin systems for industrial IoT; cloud
+      frameworks for data analysis and NLP.
+    es: >-
+      GiCP: criptografía post-cuántica en modelos de industria digital; HAR con
+      redes neuronales y AWS; gemelos digitales seguros para IoT industrial;
+      frameworks cloud para análisis de datos y PLN.
+  - en: >-
+      GiCSI: ML and NLP for threat identification in data streams; connectivity
+      networks and graph analysis in Python.
+    es: >-
+      GiCSI: ML y PLN para identificación de amenazas en flujos de datos; redes
+      de conectividad y análisis de grafos en Python.
+order: 2

@@ -1,0 +1,26 @@
+title:
+  en: SDTED — Provenance graph similarity for PIDS
+  es: SDTED — Similitud en grafos de procedencia para PIDS
+organization: COSEC, UC3M
+startDate: '2024'
+current: true
+featured: true
+summary:
+  en: >-
+    Open-source metric and tooling to compare attack provenance graphs while
+    preserving causal structure, supporting more robust PIDS evaluation.
+  es: >-
+    Métrica y herramienta en abierto para comparar grafos de procedencia de
+    ataques preservando la estructura causal, mejorando la evaluación de PIDS.
+role:
+  en: Lead researcher and implementer.
+  es: Investigador principal e implementador.
+tags:
+  - provenance
+  - PIDS
+  - graph metrics
+  - Python
+links:
+  code: https://github.com/msrom/SDTED
+cover: /images/placeholders/project-sdted.svg
+order: 1

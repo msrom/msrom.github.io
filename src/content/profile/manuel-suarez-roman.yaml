@@ -1,0 +1,132 @@
+name: Manuel Suárez Román
+tagline:
+  en: PhD student in cybersecurity · COSEC, UC3M
+  es: Doctorando en ciberseguridad · COSEC, UC3M
+shortBio:
+  en: >-
+    Cybersecurity researcher working at the intersection of data provenance,
+    cyber threat intelligence, and machine learning. I build graph- and
+    learning-based methods to detect, explain, and evaluate host-based APT
+    activity, and to normalize inconsistent threat-actor naming across vendors.
+  es: >-
+    Investigador en ciberseguridad en la intersección de la procedencia de datos,
+    la inteligencia de amenazas y el aprendizaje automático. Desarrollo métodos
+    basados en grafos y aprendizaje para detectar, explicar y evaluar actividad
+    APT en hosts, y para normalizar nomenclaturas inconsistentes de actores de
+    amenaza entre proveedores.
+longBio:
+  en: >-
+    I am a PhD student at the Computer Security Lab (COSEC) of Universidad Carlos
+    III de Madrid. Before joining the lab, I worked at CSIC on cryptography,
+    digital twins, and privacy-preserving systems, and I continue to combine
+    research with teaching and academic leadership at UNIE.
+
+    My research sits at the intersection of cybersecurity, artificial
+    intelligence, and cyber threat intelligence, with a focus on Advanced
+    Persistent Threats. I develop graph- and learning-based methods that
+    leverage system-level data provenance to detect, explain, and evaluate
+    host-based APT activity, including causality-preserving metrics for
+    provenance-based intrusion detection systems.
+
+    In parallel, I explore CTI problems around threat-actor characterization,
+    attribution, and the normalization of inconsistent naming taxonomies across
+    vendors, using large-scale TTP and open-source intelligence signals.
+  es: >-
+    Soy doctorando en el Computer Security Lab (COSEC) de la Universidad Carlos
+    III de Madrid. Antes de incorporarme al laboratorio trabajé en el CSIC en
+    criptografía, gemelos digitales y sistemas con preservación de la privacidad,
+    y sigo combinando la investigación con docencia y liderazgo académico en UNIE.
+
+    Mi investigación se sitúa en la intersección de la ciberseguridad, la
+    inteligencia artificial y la inteligencia de amenazas, con especial foco en
+    Advanced Persistent Threats. Desarrollo métodos basados en grafos y
+    aprendizaje que aprovechan la procedencia a nivel de sistema para detectar,
+    explicar y evaluar actividad APT en hosts, incluyendo métricas que preservan
+    la causalidad en sistemas de detección de intrusiones basados en procedencia.
+
+    En paralelo, exploro problemas de CTI en torno a la caracterización y
+    atribución de actores de amenaza y a la normalización de taxonomías de
+    nomenclatura inconsistentes entre proveedores, usando señales de TTPs y
+    inteligencia de fuentes abiertas a gran escala.
+email: mansuare@pa.uc3m.es
+location:
+  en: Madrid, Spain
+  es: Madrid, España
+portrait: /images/portrait.webp
+cvFile: /cv/manuel-suarez-roman.pdf
+links:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/manuelsuarezroman
+    kind: linkedin
+  - label: GitHub
+    url: https://github.com/msrom
+    kind: github
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=bCfpuO4AAAAJ&hl=es
+    kind: scholar
+  - label: ORCID
+    url: https://orcid.org/0009-0008-2569-6178
+    kind: orcid
+  - label: COSEC profile
+    url: https://cosec.inf.uc3m.es/people/manuel-suarez-roman/
+    kind: website
+researchAreas:
+  - en: Data provenance & host-based intrusion detection
+    es: Procedencia de datos y detección de intrusiones en hosts
+  - en: Advanced Persistent Threats (APTs)
+    es: Advanced Persistent Threats (APTs)
+  - en: Cyber threat intelligence & actor attribution
+    es: Inteligencia de amenazas y atribución de actores
+  - en: Graph learning & evaluation metrics
+    es: Aprendizaje en grafos y métricas de evaluación
+  - en: Machine learning for cybersecurity
+    es: Aprendizaje automático para ciberseguridad
+skills:
+  programming:
+    - Python
+    - C
+    - C++
+    - SQL
+    - Java
+    - R
+  data:
+    - TensorFlow
+    - scikit-learn
+    - NetworkX
+    - Pandas
+    - NumPy
+    - AWS
+    - Spark
+    - Streamlit
+  soft:
+    - en: Working under pressure
+      es: Trabajo bajo presión
+    - en: Resilience
+      es: Resiliencia
+    - en: Teamwork
+      es: Trabajo en equipo
+languages:
+  - name:
+      en: Spanish
+      es: Español
+    level:
+      en: Native
+      es: Nativo
+  - name:
+      en: English
+      es: Inglés
+    level:
+      en: Advanced
+      es: Avanzado
+  - name:
+      en: French
+      es: Francés
+    level:
+      en: Intermediate
+      es: Medio
+  - name:
+      en: Italian
+      es: Italiano
+    level:
+      en: Basic
+      es: Básico

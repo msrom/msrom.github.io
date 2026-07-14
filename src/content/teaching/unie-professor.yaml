@@ -1,0 +1,12 @@
+role:
+  en: Associate Professor — Mathematics
+  es: Profesor asociado — Matemáticas
+institution: UNIE
+startDate: '2022'
+current: true
+details:
+  - en: Main professor for Numerical Approximation in the Mathematics degree.
+    es: Profesor principal de Aproximación Numérica en el grado de Matemáticas.
+  - en: Lecturer in the Big Data & Business Intelligence master's program.
+    es: Profesor en el máster de Big Data & Business Intelligence.
+order: 1

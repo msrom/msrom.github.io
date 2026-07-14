@@ -1,0 +1,23 @@
+title: 'Threat Group Characterization and Attribution Using Adversary Techniques: An Information-Theoretic Approach'
+authors:
+  - Gonzalo Roa
+  - Juan Tapiador
+  - Manuel Suarez-Roman
+venue: SSRN
+year: 2025
+type: preprint
+featured: false
+summary:
+  en: >-
+    Information-theoretic framework to characterize and attribute threat groups
+    from adversary techniques and TTP signals.
+  es: >-
+    Marco informacion-teórico para caracterizar y atribuir grupos de amenaza a
+    partir de técnicas adversarias y señales TTP.
+contribution:
+  en: Contributed to methodology design and experimental evaluation on CTI datasets.
+  es: Contribuí al diseño metodológico y la evaluación experimental sobre datasets CTI.
+links:
+  paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5260384
+cover: /images/placeholders/publication-generic.svg
+order: 5

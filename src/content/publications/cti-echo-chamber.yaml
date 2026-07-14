@@ -1,0 +1,32 @@
+title: 'The CTI Echo Chamber: Fragmentation, Overlap, and Vendor Specificity in Twenty Years of Cyber Threat Reporting'
+authors:
+  - Manuel Suarez-Roman
+  - Francesco Marchiori
+  - Mauro Conti
+  - Juan Tapiador
+venue: arXiv preprint
+year: 2026
+month: 2
+type: preprint
+featured: true
+summary:
+  en: >-
+    Large-scale analysis of more than 13,000 open CTI reports revealing
+    fragmentation, overlap, and vendor-specific observational biases across two
+    decades of threat reporting.
+  es: >-
+    Análisis a gran escala de más de 13.000 informes CTI abiertos que revela
+    fragmentación, solapamiento y sesgos observacionales específicos de
+    proveedores en dos décadas de informes de amenazas.
+contribution:
+  en: >-
+    Led dataset construction, LLM-assisted feature extraction, and analysis of
+    actor–victim dynamics and vendor coverage effects.
+  es: >-
+    Lideré la construcción del dataset, la extracción de características asistida
+    por LLM y el análisis de dinámicas actor–víctima y efectos de cobertura por
+    proveedor.
+links:
+  paper: https://arxiv.org/abs/2602.17458
+cover: /images/placeholders/publication-cti-echo.svg
+order: 3

@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getSortedProjects, getProfile } from '../../lib/content';
+import { t, ui } from '../../i18n';
+
+const locale = 'en';
+const profile = await getProfile();
+const projects = await getSortedProjects();
+---
+
+<BaseLayout
+  locale={locale}
+  title={t(ui.nav.projects, locale)}
+  description={t(profile!.shortBio, locale)}
+  currentPath="/projects"
+>
+  <div class="shell page-header">
+    <p class="section__label">{t(ui.nav.projects, locale)}</p>
+    <h1>{t(ui.sections.allProjects, locale)}</h1>
+    <p>Research platforms, funded projects, and applied security work.</p>
+  </div>
+  <div class="shell work-grid section">
+    {projects.map((item) => <ProjectCard item={item} locale={locale} />)}
+  </div>
+</BaseLayout>

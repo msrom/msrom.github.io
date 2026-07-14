@@ -1,0 +1,253 @@
+---
+import type { Locale } from '../i18n';
+import { formatDateRange, localePath, t, ui } from '../i18n';
+import {
+  getFeaturedProjects,
+  getFeaturedPublications,
+  getProfile,
+  getSortedAwards,
+  getSortedEducation,
+  getSortedExperience,
+  getSortedTeaching,
+} from '../lib/content';
+import ExperienceItem from './ExperienceItem.astro';
+import ProjectCard from './ProjectCard.astro';
+import PublicationCard from './PublicationCard.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const profile = await getProfile();
+if (!profile) throw new Error('Profile content missing');
+
+const experience = await getSortedExperience();
+const education = await getSortedEducation();
+const teaching = await getSortedTeaching();
+const awards = await getSortedAwards();
+const featuredPublications = await getFeaturedPublications();
+const featuredProjects = await getFeaturedProjects();
+
+const researchExperience = experience.filter((item) => item.data.track === 'research');
+const professionalExperience = experience.filter((item) => item.data.track !== 'research');
+---
+
+<section class="hero shell" id="top">
+  <div>
+    <p class="section__label">{t(profile.tagline, locale)}</p>
+    <h1 class="display">{profile.name}</h1>
+    <p class="hero__lead">{t(profile.shortBio, locale)}</p>
+    <p class="hero__meta">{t(profile.location, locale)}</p>
+    <p class="link-row">
+      <a href={localePath('/publications', locale)}>{t(ui.nav.publications, locale)}</a>
+      <a href={localePath('/cv', locale)}>{t(ui.sections.downloadCv, locale)}</a>
+    </p>
+  </div>
+  <figure class="hero__portrait">
+    <img
+      src={profile.portrait}
+      alt={locale === 'es' ? 'Retrato de Manuel Suárez Román' : 'Portrait of Manuel Suárez Román'}
+      width="960"
+      height="1200"
+      loading="eager"
+    />
+  </figure>
+</section>
+
+<section class="section shell" id="about">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.nav.about, locale)}</p>
+    <div>
+      <h2>{locale === 'es' ? 'Investigación y trabajo aplicado' : 'Research and applied work'}</h2>
+      <p>{t(profile.longBio, locale)}</p>
+    </div>
+  </div>
+  <div class="dual-entry">
+    <article class="entry-card" id="research">
+      <h3>{t(ui.nav.research, locale)}</h3>
+      <p>{t(ui.hero.researchLead, locale)}</p>
+    </article>
+    <article class="entry-card" id="professional">
+      <h3>{t(ui.nav.professional, locale)}</h3>
+      <p>{t(ui.hero.professionalLead, locale)}</p>
+    </article>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.researchAreas, locale)}</p>
+    <ul class="bullet-list">
+      {profile.researchAreas.map((area) => <li>{t(area, locale)}</li>)}
+    </ul>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.featuredWork, locale)}</p>
+    <div class="work-grid">
+      {featuredProjects.map((item) => <ProjectCard item={item} locale={locale} />)}
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.publications, locale)}</p>
+    <div>
+      <div class="work-grid">
+        {featuredPublications.map((item) => <PublicationCard item={item} locale={locale} />)}
+      </div>
+      <p class="link-row">
+        <a href={localePath('/publications', locale)}>{t(ui.sections.allPublications, locale)}</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.experience, locale)} · {t(ui.tracks.research, locale)}</p>
+    <div class="timeline">
+      {researchExperience.map((item) => <ExperienceItem item={item} locale={locale} />)}
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.experience, locale)} · {t(ui.tracks.professional, locale)}</p>
+    <div class="timeline">
+      {professionalExperience.map((item) => <ExperienceItem item={item} locale={locale} />)}
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.teaching, locale)}</p>
+    <div class="timeline">
+      {
+        teaching.map((item) => (
+          <article class="timeline-item">
+            <div class="timeline-item__head">
+              <div>
+                <h3>{t(item.data.role, locale)}</h3>
+                <p class="timeline-item__org">{item.data.institution}</p>
+              </div>
+              <p class="timeline-item__date">
+                {formatDateRange(item.data.startDate, item.data.endDate, item.data.current, locale)}
+              </p>
+            </div>
+            <ul class="bullet-list">
+              {item.data.details.map((detail) => <li>{t(detail, locale)}</li>)}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.education, locale)}</p>
+    <div class="timeline">
+      {
+        education.map((item) => (
+          <article class="timeline-item">
+            <div class="timeline-item__head">
+              <div>
+                <h3>{t(item.data.degree, locale)}</h3>
+                <p class="timeline-item__org">{item.data.institution}</p>
+              </div>
+              <p class="timeline-item__date">
+                {formatDateRange(item.data.startDate, item.data.endDate, item.data.current, locale)}
+              </p>
+            </div>
+            {
+              item.data.notes && (
+                <ul class="bullet-list">
+                  {item.data.notes.map((note) => <li>{t(note, locale)}</li>)}
+                </ul>
+              )
+            }
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.awards, locale)}</p>
+    <div class="timeline">
+      {
+        awards.map((item) => (
+          <article class="timeline-item">
+            <div class="timeline-item__head">
+              <div>
+                <h3>{t(item.data.title, locale)}</h3>
+                <p class="timeline-item__org">{item.data.issuer}</p>
+              </div>
+              {item.data.year && <p class="timeline-item__date">{item.data.year}</p>}
+            </div>
+            {item.data.details && <p>{t(item.data.details, locale)}</p>}
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.sections.skills, locale)}</p>
+    <div class="split-list">
+      <div>
+        <h3>{locale === 'es' ? 'Programación' : 'Programming'}</h3>
+        <ul class="tag-list">
+          {profile.skills.programming.map((skill) => <li>{skill}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h3>{locale === 'es' ? 'Datos y ML' : 'Data & ML'}</h3>
+        <ul class="tag-list">
+          {profile.skills.data.map((skill) => <li>{skill}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section shell" id="contact">
+  <div class="section__intro">
+    <p class="section__label">{t(ui.nav.contact, locale)}</p>
+    <div class="contact-panel">
+      <div>
+        <h2>{locale === 'es' ? 'Hablemos' : 'Get in touch'}</h2>
+        <p>
+          {
+            locale === 'es'
+              ? 'Para colaboraciones de investigación, docencia o consultoría en ciberseguridad e IA.'
+              : 'For research collaborations, teaching, or cybersecurity and AI consulting.'
+          }
+        </p>
+        <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+      </div>
+      <div class="contact-panel__links">
+        {
+          profile.links.map((link) => (
+            <a href={link.url} rel="noopener noreferrer" target={link.kind === 'email' ? undefined : '_blank'}>
+              {link.label}
+            </a>
+          ))
+        }
+        <a href={profile.cvFile}>{t(ui.sections.downloadCv, locale)}</a>
+      </div>
+    </div>
+  </div>
+</section>

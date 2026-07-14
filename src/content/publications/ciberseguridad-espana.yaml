@@ -1,0 +1,25 @@
+title: 'La investigación en ciberseguridad en España'
+authors:
+  - Sara Degli-Esposti
+  - Manuel Suárez Román
+venue: Fundación Alternativas
+year: 2023
+month: 6
+type: report
+featured: false
+summary:
+  en: >-
+    National overview of cybersecurity research in Spain, including public and
+    private centers, capabilities, and an accompanying expert dataset.
+  es: >-
+    Panorama nacional de la investigación en ciberseguridad en España, con
+    centros públicos y privados, capacidades y un dataset complementario de
+    expertos.
+contribution:
+  en: Co-authored the chapter and contributed to the expert dataset publication.
+  es: Coautoría del capítulo y contribución al dataset de expertos publicado.
+links:
+  paper: https://digital.csic.es/handle/10261/310469
+  dataset: https://digital.csic.es/handle/10261/307617
+cover: /images/placeholders/publication-generic.svg
+order: 7

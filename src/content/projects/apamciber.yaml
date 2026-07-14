@@ -1,0 +1,25 @@
+title:
+  en: APAMCiber — Threat observatory for vulnerable groups
+  es: APAMCiber — Observatorio de amenazas para grupos vulnerables
+organization: INCIBE / UC3M
+startDate: '2024'
+current: true
+featured: true
+summary:
+  en: >-
+    INCIBE-funded project proposing an observatory of risky tools and
+    technologies for vulnerable groups, with focus on average-user risks and
+    secure-by-design awareness.
+  es: >-
+    Proyecto financiado por INCIBE que propone un observatorio de herramientas y
+    tecnologías de riesgo para grupos vulnerables, con foco en riesgos del
+    usuario medio y concienciación secure-by-design.
+role:
+  en: Research team member on attribution and prevention of multi-group threats.
+  es: Miembro del equipo de investigación en atribución y prevención de amenazas multigrupo.
+tags:
+  - INCIBE
+  - APAMCiber
+  - cybersecurity policy
+cover: /images/placeholders/project-apamciber.svg
+order: 3

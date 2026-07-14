@@ -1,0 +1,31 @@
+title: 'Attack structure matters: Causality-preserving metrics for Provenance-based Intrusion Detection Systems'
+authors:
+  - Manuel Suarez-Roman
+  - Juan Tapiador
+venue: Computers & Security
+year: 2025
+month: 10
+type: journal
+featured: true
+summary:
+  en: >-
+    Introduces SDTED, a similarity metric for provenance graphs that preserves
+    causal structure when evaluating intrusion detection and attack-graph
+    reconstruction.
+  es: >-
+    Presenta SDTED, una métrica de similitud para grafos de procedencia que
+    preserva la estructura causal al evaluar detección de intrusiones y
+    reconstrucción de grafos de ataque.
+contribution:
+  en: >-
+    Proposed SDTED, evaluated it on DARPA engagement scenarios, and open-sourced
+    the implementation to improve reproducibility in PIDS research.
+  es: >-
+    Propuse SDTED, lo evalué en escenarios DARPA y publiqué la implementación
+    en abierto para mejorar la reproducibilidad en investigación PIDS.
+links:
+  paper: https://www.sciencedirect.com/science/article/pii/S0167404825003344
+  code: https://github.com/msrom/SDTED
+  doi: '10.1016/j.cose.2025.104578'
+cover: /images/placeholders/publication-sdted.svg
+order: 1

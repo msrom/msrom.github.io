@@ -1,0 +1,27 @@
+title: 'Following Negationists on Twitter and Telegram: Application of NCD to the Analysis of Multiplatform Misinformation Dynamics'
+authors:
+  - Alfonso de Paz
+  - Manuel Suarez-Roman
+  - Santiago Palmero
+  - Sara Degli-Esposti
+  - David Arroyo
+venue: UCAmI (Springer LNNS)
+year: 2022
+month: 11
+type: conference
+featured: false
+summary:
+  en: >-
+    Cross-platform analysis of COVID-19 negationist communities using normalized
+    compression distance for authorship attribution and account linking.
+  es: >-
+    Análisis multiplataforma de comunidades negacionistas de COVID-19 usando
+    distancia de compresión normalizada para atribución de autoría y vinculación
+    de cuentas.
+contribution:
+  en: Developed graph and NLP pipelines and applied NCD-based linking across Twitter and Telegram.
+  es: Desarrollé pipelines de grafos y PLN y apliqué vinculación basada en NCD entre Twitter y Telegram.
+links:
+  paper: https://link.springer.com/chapter/10.1007/978-3-031-21333-5_110
+cover: /images/placeholders/publication-generic.svg
+order: 8

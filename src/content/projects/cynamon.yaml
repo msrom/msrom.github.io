@@ -1,0 +1,23 @@
+title:
+  en: CYNAMON — Network analysis for the next-generation Internet
+  es: CYNAMON — Análisis de redes para la Internet de próxima generación
+organization: Comunidad de Madrid / CSIC / UC3M
+startDate: '2022'
+endDate: '2023'
+current: false
+featured: false
+summary:
+  en: >-
+    Regional R&D project on cybersecurity, network analysis, and monitoring for
+    next-generation Internet infrastructures.
+  es: >-
+    Proyecto de I+D regional sobre ciberseguridad, análisis de redes y
+    monitorización para infraestructuras de Internet de próxima generación.
+role:
+  en: Research team member on graph analysis and threat identification pipelines.
+  es: Miembro del equipo en pipelines de análisis de grafos e identificación de amenazas.
+tags:
+  - network security
+  - graph analysis
+cover: /images/placeholders/project-generic.svg
+order: 6

@@ -1,0 +1,23 @@
+title: 'Self-Similarity in Online Networks During Social Movements'
+authors:
+  - Manuel Suarez-Roman
+  - M. Ángeles Serrano
+  - Yérali Gandica
+venue: arXiv preprint
+year: 2026
+type: preprint
+featured: false
+summary:
+  en: >-
+    Study of self-similar patterns in online networks during social movements,
+    extending the master's thesis work on network dynamics.
+  es: >-
+    Estudio de patrones de auto-similitud en redes online durante movimientos
+    sociales, extendiendo el trabajo del máster en dinámicas de redes.
+contribution:
+  en: Led analysis and modeling of self-similarity phenomena in movement-related networks.
+  es: Lideré el análisis y modelado de fenómenos de auto-similitud en redes asociadas a movimientos.
+links:
+  paper: https://arxiv.org/abs/2604.22677
+cover: /images/placeholders/publication-generic.svg
+order: 6

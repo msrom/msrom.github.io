@@ -1,0 +1,22 @@
+degree:
+  en: Double degree in Mathematics and Computer Science
+  es: Doble grado en Matemáticas e Ingeniería Informática
+institution: Universidad Autónoma de Madrid
+institutionUrl: https://www.uam.es/
+startDate: '2017'
+endDate: '2022'
+current: false
+notes:
+  - en: >-
+      Mathematics thesis: Convergence of Fourier series and the Gibbs phenomenon
+      (Excellent).
+    es: >-
+      TFG Matemáticas: Convergencia de series de Fourier y fenómeno de Gibbs
+      (Sobresaliente).
+  - en: >-
+      Computer Science thesis: Opinion formation in social networks and media
+      influence (Excellent).
+    es: >-
+      TFG Informática: Formación de opiniones en redes sociales e influencia de
+      los medios (Sobresaliente).
+order: 4

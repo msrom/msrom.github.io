@@ -1,0 +1,23 @@
+title:
+  en: Associate Professor & Academic Director
+  es: Profesor asociado y director académico
+organization: UNIE — Universidad Internacional de la Empresa
+organizationUrl: https://www.unie.es/
+location:
+  en: Madrid, Spain
+  es: Madrid, España
+startDate: '2022'
+current: true
+track: professional
+highlights:
+  - en: Main professor for Numerical Approximation in the Mathematics degree.
+    es: Profesor principal de Aproximación Numérica en el grado de Matemáticas.
+  - en: Director of the Master's in Big Data & Business Intelligence (2023–2024).
+    es: Director del Máster en Big Data & Business Intelligence (2023–2024).
+  - en: >-
+      Expert advisor for verification reports of Master's degrees in
+      Cybersecurity and Artificial Intelligence (madri+d).
+    es: >-
+      Asesor experto en informes de verificación de másteres en Ciberseguridad
+      e Inteligencia Artificial (madri+d).
+order: 3

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomeContent from '../../components/HomeContent.astro';
+import { getProfile } from '../../lib/content';
+import { t } from '../../i18n';
+
+const locale = 'es';
+const profile = await getProfile();
+if (!profile) throw new Error('Profile content missing');
+
+const description = t(profile.shortBio, locale);
+---
+
+<BaseLayout locale={locale} title={profile.name} description={description} currentPath="/">
+  <HomeContent locale={locale} />
+</BaseLayout>

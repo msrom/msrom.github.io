@@ -1,0 +1,14 @@
+degree:
+  en: Master's in Cybersecurity
+  es: Máster en Ciberseguridad
+institution: IMF Business School & Universidad Nebrija (Deloitte)
+institutionUrl: https://www.nebrija.es/
+startDate: '2021'
+endDate: '2022'
+current: false
+notes:
+  - en: "Master's thesis: Forensic analysis of a Windows 10 device (Excellent)."
+    es: 'TFM: Análisis forense de un dispositivo Windows 10 (Sobresaliente).'
+  - en: 'Distinguished modules: Cyber Intelligence, Forensic Analysis.'
+    es: 'Módulos destacados: Ciberinteligencia, Análisis forense.'
+order: 3

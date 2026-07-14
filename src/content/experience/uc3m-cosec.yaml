@@ -1,0 +1,31 @@
+title:
+  en: Cybersecurity Researcher
+  es: Investigador en ciberseguridad
+organization: Universidad Carlos III de Madrid — COSEC
+organizationUrl: https://cosec.inf.uc3m.es/
+location:
+  en: Madrid, Spain
+  es: Madrid, España
+startDate: '2024'
+current: true
+track: research
+highlights:
+  - en: >-
+      Design of provenance-graph methods for Advanced Persistent Threat
+      intrusion detection and APT characterization.
+    es: >-
+      Diseño de métodos con grafos de procedencia para detección de intrusiones
+      APT y caracterización de APTs.
+  - en: >-
+      Study of the cyber threat landscape and machine-learning models for
+      threat-actor attribution and characterization.
+    es: >-
+      Estudio de la evolución del panorama de amenazas y modelos de ML para
+      atribución y caracterización de actores de amenaza.
+  - en: >-
+      Member of the APAMCiber project (INCIBE) on attribution and prevention of
+      threats affecting vulnerable groups.
+    es: >-
+      Miembro del proyecto APAMCiber (INCIBE) sobre atribución y prevención de
+      amenazas con impacto en grupos vulnerables.
+order: 1

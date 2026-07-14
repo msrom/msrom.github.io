@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeContent from '../components/HomeContent.astro';
+import { getProfile } from '../lib/content';
+import { t } from '../i18n';
+
+const locale = 'en';
+const profile = await getProfile();
+if (!profile) throw new Error('Profile content missing');
+
+const description = t(profile.shortBio, locale);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: t(profile.tagline, locale),
+  email: profile.email,
+  url: Astro.site,
+  sameAs: profile.links.map((link) => link.url),
+  knowsAbout: profile.researchAreas.map((area) => t(area, locale)),
+};
+---
+
+<BaseLayout locale={locale} title={profile.name} description={description} currentPath="/" jsonLd={jsonLd}>
+  <HomeContent locale={locale} />
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { publicationVenue } from '../../../lib/content';
+import { localePath, t, ui } from '../../../i18n';
+
+export async function getStaticPaths() {
+  const publications = await getCollection('publications');
+  return publications.map((item) => ({ params: { slug: item.id }, props: { item } }));
+}
+
+const locale = 'es';
+const { item } = Astro.props;
+const { data } = item;
+const cover = data.cover ?? '/images/placeholders/publication-generic.svg';
+---
+
+<BaseLayout locale={locale} title={data.title} description={t(data.summary, locale)} currentPath={`/publications/${item.id}`}>
+  <article class="shell page-header">
+    <p class="section__label">{publicationVenue(data.year, data.venue)}</p>
+    <h1>{data.title}</h1>
+    <p class="meta-row">{data.authors.join(', ')}</p>
+    <figure class="work-item__media">
+      <img src={cover} alt="" width="640" height="400" />
+    </figure>
+  </article>
+  <div class="shell detail-grid">
+    <div>
+      <h2>Resumen</h2>
+      <p>{t(data.summary, locale)}</p>
+      <h2>{t(ui.sections.contribution, locale)}</h2>
+      <p>{t(data.contribution, locale)}</p>
+    </div>
+    <aside class="detail-aside">
+      <h3>{t(ui.sections.links, locale)}</h3>
+      <div class="contact-panel__links">
+        {data.links?.paper && <a href={data.links.paper} rel="noopener noreferrer" target="_blank">{t(ui.sections.viewPaper, locale)}</a>}
+        {data.links?.code && <a href={data.links.code} rel="noopener noreferrer" target="_blank">{t(ui.sections.viewCode, locale)}</a>}
+        {data.links?.dataset && <a href={data.links.dataset} rel="noopener noreferrer" target="_blank">Dataset</a>}
+        {data.links?.doi && <span>DOI: {data.links.doi}</span>}
+      </div>
+      <p class="link-row">
+        <a href={localePath('/publications', locale)}>{t(ui.sections.allPublications, locale)}</a>
+      </p>
+    </aside>
+  </div>
+</BaseLayout>

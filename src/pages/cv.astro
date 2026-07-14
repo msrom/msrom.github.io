@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import {
+  getProfile,
+  getSortedAwards,
+  getSortedCertifications,
+  getSortedEducation,
+  getSortedExperience,
+  getSortedPublications,
+  getSortedTeaching,
+} from '../lib/content';
+import { formatDateRange, t, ui } from '../i18n';
+import { publicationVenue } from '../lib/content';
+
+const locale = 'en';
+const profile = await getProfile();
+if (!profile) throw new Error('Profile content missing');
+
+const experience = await getSortedExperience();
+const education = await getSortedEducation();
+const teaching = await getSortedTeaching();
+const publications = await getSortedPublications();
+const awards = await getSortedAwards();
+const certifications = await getSortedCertifications();
+---
+
+<BaseLayout locale={locale} title="CV" description={t(profile.shortBio, locale)} currentPath="/cv">
+  <div class="shell page-header">
+    <p class="section__label">CV</p>
+    <h1>{profile.name}</h1>
+    <p>{t(profile.tagline, locale)}</p>
+    <p class="link-row">
+      <a href={profile.cvFile}>{t(ui.sections.downloadCv, locale)}</a>
+      <a href={`mailto:${profile.email}`}>{profile.email}</a>
+    </p>
+  </div>
+
+  <div class="shell cv-grid section">
+    <section>
+      <h2>{t(ui.nav.about, locale)}</h2>
+      <p>{t(profile.longBio, locale)}</p>
+    </section>
+
+    <section>
+      <h2>{t(ui.sections.experience, locale)}</h2>
+      <div class="timeline">
+        {experience.map((item) => <ExperienceItem item={item} locale={locale} />)}
+      </div>
+    </section>
+
+    <section>
+      <h2>{t(ui.sections.education, locale)}</h2>
+      <div class="timeline">
+        {
+          education.map((item) => (
+            <article class="timeline-item">
+              <div class="timeline-item__head">
+                <div>
+                  <h3>{t(item.data.degree, locale)}</h3>
+                  <p class="timeline-item__org">{item.data.institution}</p>
+                </div>
+                <p class="timeline-item__date">
+                  {formatDateRange(item.data.startDate, item.data.endDate, item.data.current, locale)}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section>
+      <h2>{t(ui.sections.publications, locale)}</h2>
+      <ul class="bullet-list">
+        {
+          publications.map((item) => (
+            <li>
+              {item.data.authors.join(', ')}. <strong>{item.data.title}</strong>. {publicationVenue(item.data.year, item.data.venue)}.
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h2>{t(ui.sections.teaching, locale)}</h2>
+      <div class="timeline">
+        {
+          teaching.map((item) => (
+            <article class="timeline-item">
+              <h3>{t(item.data.role, locale)}</h3>
+              <p class="timeline-item__org">{item.data.institution}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul class="bullet-list">
+        {certifications.map((item) => <li>{item.data.title} — {item.data.issuer}{item.data.year ? ` (${item.data.year})` : ''}</li>)}
+      </ul>
+    </section>
+
+    <section>
+      <h2>{t(ui.sections.awards, locale)}</h2>
+      <ul class="bullet-list">
+        {awards.map((item) => <li>{t(item.data.title, locale)} — {item.data.issuer}</li>)}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

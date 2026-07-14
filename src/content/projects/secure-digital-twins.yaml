@@ -1,0 +1,24 @@
+title:
+  en: Secure digital twins for industrial IoT
+  es: Gemelos digitales seguros para IoT industrial
+organization: CSIC — GiCP
+startDate: '2023'
+endDate: '2024'
+current: false
+featured: false
+summary:
+  en: >-
+    Design of a state-of-the-art secure digital-twin architecture for industrial
+    environments with IoT devices and cloud analytics.
+  es: >-
+    Diseño de una arquitectura segura de gemelos digitales para entornos
+    industriales con dispositivos IoT y analítica en la nube.
+role:
+  en: Research support on architecture, threat modeling, and implementation planning.
+  es: Apoyo en arquitectura, modelado de amenazas y planificación de implementación.
+tags:
+  - digital twins
+  - IoT
+  - industrial security
+cover: /images/placeholders/project-digital-twin.svg
+order: 5

@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PublicationCard from '../../components/PublicationCard.astro';
+import { getSortedPublications, getProfile } from '../../lib/content';
+import { t, ui } from '../../i18n';
+
+const locale = 'en';
+const profile = await getProfile();
+const publications = await getSortedPublications();
+---
+
+<BaseLayout
+  locale={locale}
+  title={t(ui.nav.publications, locale)}
+  description={t(profile!.shortBio, locale)}
+  currentPath="/publications"
+>
+  <div class="shell page-header">
+    <p class="section__label">{t(ui.nav.publications, locale)}</p>
+    <h1>{t(ui.sections.allPublications, locale)}</h1>
+    <p>
+      Peer-reviewed articles, preprints, and reports on provenance-based detection,
+      cyber threat intelligence, and applied security.
+    </p>
+  </div>
+  <div class="shell work-grid section">
+    {publications.map((item) => <PublicationCard item={item} locale={locale} />)}
+  </div>
+</BaseLayout>

@@ -1,0 +1,324 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: profile
+    label: Profile
+    type: collection
+    path: src/content/profile
+    extension: yaml
+    format: yaml
+    view:
+      primary: name
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: tagline
+        label: Tagline
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - name: shortBio
+        label: Short bio
+        type: object
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - name: longBio
+        label: Long bio
+        type: object
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - name: email
+        label: Email
+        type: string
+      - name: location
+        label: Location
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - name: portrait
+        label: Portrait path
+        type: string
+      - name: cvFile
+        label: CV file path
+        type: string
+      - name: links
+        label: Links
+        type: list
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: url, label: URL, type: string }
+          - name: kind
+            label: Kind
+            type: select
+            options: [linkedin, github, scholar, orcid, email, website, other]
+      - name: researchAreas
+        label: Research areas
+        type: list
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - name: skills
+        label: Skills
+        type: object
+        fields:
+          - name: programming
+            label: Programming
+            type: list
+            field: { name: item, label: Skill, type: string }
+          - name: data
+            label: Data & ML
+            type: list
+            field: { name: item, label: Skill, type: string }
+          - name: soft
+            label: Soft skills
+            type: list
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: es, label: Español, type: string }
+      - name: languages
+        label: Languages
+        type: list
+        fields:
+          - name: name
+            label: Language
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: es, label: Español, type: string }
+          - name: level
+            label: Level
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: es, label: Español, type: string }
+
+  - name: experience
+    label: Experience
+    type: collection
+    path: src/content/experience
+    extension: yaml
+    format: yaml
+    view:
+      primary: organization
+      secondary: startDate
+    fields:
+      - name: title
+        label: Title
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - { name: organization, label: Organization, type: string }
+      - { name: organizationUrl, label: Organization URL, type: string, required: false }
+      - name: location
+        label: Location
+        type: object
+        required: false
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - { name: startDate, label: Start date, type: string }
+      - { name: endDate, label: End date, type: string, required: false }
+      - { name: current, label: Current role, type: boolean }
+      - name: track
+        label: Track
+        type: select
+        options: [research, professional, leadership]
+      - name: highlights
+        label: Highlights
+        type: list
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - { name: order, label: Sort order, type: number }
+
+  - name: education
+    label: Education
+    type: collection
+    path: src/content/education
+    extension: yaml
+    format: yaml
+    view:
+      primary: institution
+    fields:
+      - name: degree
+        label: Degree
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - { name: institution, label: Institution, type: string }
+      - { name: institutionUrl, label: Institution URL, type: string, required: false }
+      - { name: startDate, label: Start date, type: string }
+      - { name: endDate, label: End date, type: string, required: false }
+      - { name: current, label: In progress, type: boolean }
+      - name: notes
+        label: Notes
+        type: list
+        required: false
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - { name: order, label: Sort order, type: number }
+
+  - name: publications
+    label: Publications
+    type: collection
+    path: src/content/publications
+    extension: yaml
+    format: yaml
+    view:
+      primary: title
+      secondary: year
+    fields:
+      - { name: title, label: Title, type: string }
+      - name: authors
+        label: Authors
+        type: list
+        field: { name: author, label: Author, type: string }
+      - { name: venue, label: Venue, type: string }
+      - { name: year, label: Year, type: number }
+      - { name: month, label: Month, type: number, required: false }
+      - name: type
+        label: Type
+        type: select
+        options: [journal, conference, preprint, report, chapter]
+      - { name: featured, label: Featured on home, type: boolean }
+      - name: summary
+        label: Summary
+        type: object
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - name: contribution
+        label: Contribution
+        type: object
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - name: links
+        label: Links
+        type: object
+        required: false
+        fields:
+          - { name: paper, label: Paper URL, type: string, required: false }
+          - { name: code, label: Code URL, type: string, required: false }
+          - { name: dataset, label: Dataset URL, type: string, required: false }
+          - { name: doi, label: DOI, type: string, required: false }
+      - { name: cover, label: Cover image path, type: string, required: false }
+      - { name: order, label: Sort order, type: number }
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    extension: yaml
+    format: yaml
+    view:
+      primary: title.en
+    fields:
+      - name: title
+        label: Title
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - { name: organization, label: Organization, type: string, required: false }
+      - { name: startDate, label: Start date, type: string }
+      - { name: endDate, label: End date, type: string, required: false }
+      - { name: current, label: Current project, type: boolean }
+      - { name: featured, label: Featured on home, type: boolean }
+      - name: summary
+        label: Summary
+        type: object
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - name: role
+        label: Role
+        type: object
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - name: tags
+        label: Tags
+        type: list
+        field: { name: tag, label: Tag, type: string }
+      - name: links
+        label: Links
+        type: object
+        required: false
+        fields:
+          - { name: website, label: Website, type: string, required: false }
+          - { name: code, label: Code URL, type: string, required: false }
+      - { name: cover, label: Cover image path, type: string, required: false }
+      - { name: order, label: Sort order, type: number }
+
+  - name: teaching
+    label: Teaching
+    type: collection
+    path: src/content/teaching
+    extension: yaml
+    format: yaml
+    fields:
+      - name: role
+        label: Role
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - { name: institution, label: Institution, type: string }
+      - { name: startDate, label: Start date, type: string }
+      - { name: endDate, label: End date, type: string, required: false }
+      - { name: current, label: Current, type: boolean }
+      - name: details
+        label: Details
+        type: list
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - { name: order, label: Sort order, type: number }
+
+  - name: awards
+    label: Awards
+    type: collection
+    path: src/content/awards
+    extension: yaml
+    format: yaml
+    fields:
+      - name: title
+        label: Title
+        type: object
+        fields:
+          - { name: en, label: English, type: string }
+          - { name: es, label: Español, type: string }
+      - { name: issuer, label: Issuer, type: string }
+      - { name: year, label: Year, type: number, required: false }
+      - name: details
+        label: Details
+        type: object
+        required: false
+        fields:
+          - { name: en, label: English, type: text }
+          - { name: es, label: Español, type: text }
+      - { name: order, label: Sort order, type: number }
+
+  - name: certifications
+    label: Certifications
+    type: collection
+    path: src/content/certifications
+    extension: yaml
+    format: yaml
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: issuer, label: Issuer, type: string }
+      - { name: year, label: Year, type: number, required: false }
+      - { name: url, label: URL, type: string, required: false }
+      - { name: order, label: Sort order, type: number }

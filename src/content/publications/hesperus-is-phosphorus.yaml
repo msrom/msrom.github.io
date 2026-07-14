@@ -1,0 +1,30 @@
+title: 'Hesperus is Phosphorus: Mapping Threat Actor Naming Taxonomies at Scale'
+authors:
+  - Gonzalo Roa
+  - Manuel Suarez-Roman
+  - Juan Tapiador
+venue: arXiv preprint
+year: 2025
+month: 12
+type: preprint
+featured: true
+summary:
+  en: >-
+    HiP integrates 17 vendor taxonomies and thousands of threat-actor aliases to
+    study naming inconsistency and support normalization at scale.
+  es: >-
+    HiP integra 17 taxonomías de proveedores y miles de alias de actores de
+    amenaza para estudiar la inconsistencia de nomenclatura y normalizarla a
+    escala.
+contribution:
+  en: >-
+    Co-designed the HiP methodology, built large-scale CTI datasets, and
+    analyzed alias proliferation across vendors and time.
+  es: >-
+    Co-diseñé la metodología HiP, construí conjuntos de datos CTI a gran escala
+    y analicé la proliferación de alias entre proveedores y en el tiempo.
+links:
+  paper: https://arxiv.org/abs/2512.00857
+  code: https://github.com/0xjet/hip
+cover: /images/placeholders/publication-hip.svg
+order: 2

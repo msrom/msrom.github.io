@@ -1,0 +1,30 @@
+title: 'A Digital Twin Threat Survey'
+authors:
+  - Manuel Suárez-Román
+  - Mario Sanz-Rodrigo
+  - Andrés Marín-López
+  - David Arroyo
+venue: Big Data and Cognitive Computing
+year: 2025
+month: 10
+type: journal
+featured: true
+summary:
+  en: >-
+    Survey of security challenges, threats, and research directions for digital
+    twin environments across industrial and cyber-physical settings.
+  es: >-
+    Revisión de retos de seguridad, amenazas y líneas de investigación para
+    entornos de gemelos digitales en contextos industriales y ciberfísicos.
+contribution:
+  en: >-
+    Co-authored the survey and synthesized threat models and open problems from
+    prior CSIC work on secure digital twins.
+  es: >-
+    Coautoría de la revisión y síntesis de modelos de amenaza y problemas abiertos
+    a partir del trabajo previo en gemelos digitales seguros en el CSIC.
+links:
+  paper: https://www.mdpi.com/2504-2289/9/10/252
+  doi: '10.3390/bdcc9100252'
+cover: /images/placeholders/publication-digital-twin.svg
+order: 4

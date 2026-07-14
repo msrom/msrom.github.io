@@ -1,0 +1,23 @@
+title:
+  en: CTICore — Two decades of CTI reporting
+  es: CTICore — Dos décadas de informes CTI
+organization: COSEC, UC3M
+startDate: '2025'
+current: true
+featured: false
+summary:
+  en: >-
+    Dataset and analysis pipeline for long-horizon cyber threat intelligence
+    reporting, vendor coverage, and actor–victim dynamics.
+  es: >-
+    Dataset y pipeline de análisis para informes CTI de largo horizonte,
+    cobertura por proveedor y dinámicas actor–víctima.
+role:
+  en: Lead author on dataset construction and large-scale analysis.
+  es: Autor principal en construcción del dataset y análisis a gran escala.
+tags:
+  - CTI
+  - datasets
+  - LLM extraction
+cover: /images/placeholders/project-cti-core.svg
+order: 4

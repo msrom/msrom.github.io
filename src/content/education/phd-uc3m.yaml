@@ -1,0 +1,11 @@
+degree:
+  en: PhD in Computer Science and Technology
+  es: Doctorado en Ciencia y Tecnología Informática
+institution: Universidad Carlos III de Madrid — COSEC
+institutionUrl: https://www.uc3m.es/
+startDate: '2024'
+current: true
+notes:
+  - en: Applications of AI in threat detection.
+    es: Aplicaciones de IA en detección de amenazas.
+order: 1

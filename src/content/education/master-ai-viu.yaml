@@ -1,0 +1,12 @@
+degree:
+  en: Master's in Artificial Intelligence
+  es: Máster en Inteligencia Artificial
+institution: Universidad Internacional de Valencia
+institutionUrl: https://www.universidadviu.com/
+startDate: '2023'
+endDate: '2024'
+current: false
+notes:
+  - en: "Master's thesis: Self-similarity in social movements (Excellent)."
+    es: 'TFM: Auto-similitud en movimientos sociales (Sobresaliente).'
+order: 2
