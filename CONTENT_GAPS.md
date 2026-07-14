@@ -7,7 +7,7 @@ Este documento lista lo que falta por incorporar, confirmar o sustituir en la we
 | Acción | Por qué | Cómo |
 |--------|---------|------|
 | Autorizar **Pages CMS** | Editar contenido sin tocar código | Entra en [pagescms.com](https://pagescms.com), conecta el repo `msrom/msrom.github.io` y autoriza acceso GitHub |
-| Activar **GitHub Pages** desde Actions | Publicar el sitio | Repo → Settings → Pages → Source: **GitHub Actions** |
+| Configurar **GitHub Pages** | Publicar el sitio | Repo → Settings → Pages → Source: **Deploy from a branch** → rama **`gh-pages`** / root |
 | Confirmar **dominio** | URL canónica y SEO | Si usarás dominio propio, añade `public/CNAME` y actualiza `site` en `astro.config.mjs` |
 | Revisar **traducciones ES** | Calidad editorial | Repasa textos bilingües en `src/content/` desde Pages CMS |
 

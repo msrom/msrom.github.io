@@ -64,11 +64,29 @@ Campos bilingües usan objetos `{ en: "...", es: "..." }`.
 
 ## Despliegue
 
-El workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) despliega en cada push a `main`.
+El workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) construye el sitio con Astro y publica el contenido de `dist/` en la rama **`gh-pages`**.
 
-**Primera vez:** en GitHub → Settings → Pages → Build and deployment → Source: **GitHub Actions**.
+### Configuración en GitHub (obligatoria)
+
+1. Repo → **Settings** → **Pages**
+2. **Build and deployment** → Source: **Deploy from a branch**
+3. **Branch:** `gh-pages` · carpeta **`/ (root)`**
+4. Guarda
+
+> **Importante:** no uses `main` como rama de publicación. `main` contiene el código fuente (Astro/YAML), no HTML. Si Pages apunta a `main`, GitHub intentará procesarlo con Jekyll y fallará (`pages-build-deployment`).
+
+Tras el primer push a `main` con el workflow activo, se creará la rama `gh-pages` automáticamente.
 
 URL prevista: https://msrom.github.io
+
+### Si ves el error de Jekyll
+
+```
+GitHub Pages: jekyll v3.10.0
+Source: /github/workspace/.
+```
+
+Significa que Pages está publicando desde `main` en lugar de `gh-pages`. Cambia la rama en Settings → Pages como se indica arriba.
 
 ## Recursos pendientes
 
