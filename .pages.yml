@@ -322,3 +322,14 @@ content:
       - { name: year, label: Year, type: number, required: false }
       - { name: url, label: URL, type: string, required: false }
       - { name: order, label: Sort order, type: number }
+
+  - name: others
+    label: Others
+    type: collection
+    path: src/content/others
+    extension: yaml
+    format: yaml
+    fields:
+      - { name: en, label: English, type: text }
+      - { name: es, label: Español, type: text }
+      - { name: order, label: Sort order, type: number }
